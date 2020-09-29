@@ -38,9 +38,6 @@ if __name__ == '__main__':
     # TCP flow
     h2.cmd("iperf -s -i 1 -t 5 -p 7777 > ./out/result_s.txt &")
     h1.cmd("iperf -c " + str(h2.IP()) + " -i 1 -t 5 -p 7777 > ./out/result_c.txt &")
-    # UDP flow
-    # h2.cmd("iperf -s -i 1 -t 5 -p 7777 -u > ./out/result_s.txt &")
-    # h1.cmd("iperf -c " + str(h2.IP()) + " -i 1 -t 5 -p 7777 -u > ./out/result_c.txt &")
 
     CLI(net)
     net.stop()
